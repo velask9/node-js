@@ -1,0 +1,9 @@
+const mysql = require('mysql2')
+
+exports.promisePool = mysql.createPool(
+    {
+        host:     'xxx', // <== Update
+        user:     'xxx', // <== Update
+        password: 'xxx', // <== Update
+        database: 'xxx'  // <== Update
+    }).promise()
