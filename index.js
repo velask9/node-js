@@ -26,15 +26,6 @@ app.get('/message', cors(corsOptions), async (req, res) => {
 })
 
 //
-// POST /message
-//
-
-app.post('/message', cors(corsOptions), async (req, res) => { 
-    console.log(req.body)
-    res.send("OK")
-})
-
-//
 // GET /person
 //
 
