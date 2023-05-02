@@ -17,23 +17,32 @@ app.use(express.urlencoded({extended: true}))
 //
 
 app.get('/message', cors(corsOptions), async (req, res) => { 
-    // let result = await dataAccess. <YOUR FUNCTION HERE>
+    // let result = await mySqlProxy.<YOUR FUNCTION HERE>
     // let id = req.params['id'];                 // Read params from URL.
     // let queryParam1 = req.query['personType']  // Read query params from URL.
     // let body = req.body;                       // Read request body.
     // res.send(<YOUR OBJECT HERE>);
-
-    const p = await mySqlProxy.selectPersonById(4)
-    console.log(p)
-    
     res.send({message: 'Hello World'})
 })
+
+//
+// POST /message
+//
 
 app.post('/message', cors(corsOptions), async (req, res) => { 
     console.log(req.body)
     res.send("OK")
 })
 
+//
+// GET /person
+//
+
+app.get('/person/:id', cors(corsOptions), async (req, res) => { 
+    const personId = req.params['id']
+    const p = await mySqlProxy.selectPersonById(personId)
+    res.send(p)
+})
 
 app.listen(PORT, () => {
     console.log(`Express Web API running on port: ${PORT}`)
