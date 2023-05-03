@@ -11,13 +11,14 @@ app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
-//
-// GET /message
-//
-
 app.get('/message', cors(corsOptions), async (req, res) => { 
     res.send({message: 'Hello World!!!'})
 })
+
+app.listen(PORT, () => {
+    console.log(`Express Web API running on port: ${PORT}`)
+})
+
 
 //
 // GET /person
@@ -27,8 +28,4 @@ app.get('/person/:id', cors(corsOptions), async (req, res) => {
     const personId = req.params['id']
     const p = await mySqlProxy.selectPersonById(personId)
     res.send(p)
-})
-
-app.listen(PORT, () => {
-    console.log(`Express Web API running on port: ${PORT}`)
 })
