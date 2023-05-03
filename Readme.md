@@ -12,8 +12,8 @@ Assignments are located [here](Assignments.md).
 
 # Endpoint Reference
 ```
-app.get('/message', cors(corsOptions), async (req, res) => { 
-    // let result = await mySqlProxy.<YOUR FUNCTION HERE>
+app.get('/person', cors(corsOptions), async (req, res) => { 
+    // let result = await MySqlProxy.<YOUR FUNCTION HERE>
     // let id = req.params['id'];                 // Read params from URL.
     // let queryParam1 = req.query['personType']  // Read query params from URL.
     // let body = req.body;                       // Read request body.
