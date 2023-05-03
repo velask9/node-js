@@ -21,6 +21,18 @@ app.get('/person/:id', cors(corsOptions), async (req, res) => {
     res.send(p)
 })
 
+app.post('/persons/', cors(corsOptions), async (req, res) => { 
+    const person = req.body
+    const addedPerson = await mySqlProxy.insertPerson(person)
+    console.log(addedPerson)
+    res.send(p)
+})
+
+app.get('/persons/', cors(corsOptions), async (req, res) => { 
+    const p = await mySqlProxy.selectPersons()
+    res.send(p)
+})
+
 app.listen(PORT, () => {
     console.log(`Express web API running on port: ${PORT}.`)
 })
