@@ -15,6 +15,10 @@ app.get('/message', cors(corsOptions), async (req, res) => {
     res.send({message: 'Hello World!!!'})
 })
 
+//
+// Person
+//
+
 app.get('/person/:id', cors(corsOptions), async (req, res) => { 
     const personId = req.params['id']
     const p = await mySqlProxy.selectPersonById(personId)
@@ -37,6 +41,13 @@ app.get('/persons/', cors(corsOptions), async (req, res) => {
     const p = await mySqlProxy.selectPersons()
     res.send(p)
 })
+
+
+//
+// Car
+//
+
+
 
 app.listen(PORT, () => {
     console.log(`Express web API running on port: ${PORT}.`)
