@@ -1,6 +1,7 @@
 const cors = require('cors')
 const express = require('express')
 const mySqlProxy = require('./MySqlProxy')
+const { body, check, param, validationResult } = require('express-validator')
 
 const PORT = 80
 const app = express()
@@ -19,11 +20,21 @@ app.get('/message', cors(corsOptions), async (req, res) => {
 // Person
 //
 
-app.get('/person/:id', cors(corsOptions), async (req, res) => { 
-    const personId = req.params['id']
-    const person = await mySqlProxy.selectPersonById(personId)
-    person ? res.send(person) : res.status(404).send({message: 'Not found.'})
-})
+app.get('/person/:id', 
+    cors(corsOptions), 
+    param('id').isNumeric(),
+    async (req, res) => { 
+        // Validate...
+        const errors = validationResult(req)
+        if (!errors.isEmpty()) {
+            return res.status(400).json({ errors: errors.array() })
+        }
+        // Business logic...
+        const personId = req.params['id']
+        const person = await mySqlProxy.selectPersonById(personId)
+        person ? res.send(person) : res.status(404).send({message: 'Not found.'})
+    }
+)
 
 app.post('/person/', cors(corsOptions), async (req, res) => { 
     const person = req.body
