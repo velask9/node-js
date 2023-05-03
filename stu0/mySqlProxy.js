@@ -18,40 +18,40 @@ const DELETE_PERSON = "delete from person where person_id = ?"
 
 exports.selectPersonById = async (personId) => {
     try {
-        const [rows, fields] = await promisePool.query(SELECT_PERSON, [personId]);
-        return rows;
+        const [rows] = await promisePool.query(SELECT_PERSON, [personId])
+        return rows
     }
-    catch(e) {
+    catch (e) {
         console.log(e)
     }
 }
 
 exports.insertPerson = async (firstName, lastName) => {
     try {
-        const [rows] = await promisePool.execute(INSERT_PERSON, [firstName, lastName]);
-        return rows;
+        const [rows] = await promisePool.execute(INSERT_PERSON, [firstName, lastName])
+        return rows
     }
-    catch(e) {
+    catch (e) {
         console.log(e)
     }
 }
 
 exports.updatePerson = async (oldName, newName) => {
     try {
-        const [rows] = await promisePool.execute(UPDATE_PERSON, [newName, oldName]);
-        return rows;
+        const [rows] = await promisePool.execute(UPDATE_PERSON, [newName, oldName])
+        return rows
     }
-    catch(e) {
+    catch (e) {
         console.log(e)
     }
 }
 
 exports.deletePerson = async (personId) => {
     try {
-        const [rows] = await promisePool.execute(DELETE_PERSON, [personId]);
-        return rows;
+        const [rows] = await promisePool.execute(DELETE_PERSON, [personId])
+        return rows
     }
-    catch(e) {
+    catch (e) {
         console.log(e)
     }
 }
