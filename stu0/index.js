@@ -21,11 +21,10 @@ app.get('/person/:id', cors(corsOptions), async (req, res) => {
     res.send(p)
 })
 
-app.post('/persons/', cors(corsOptions), async (req, res) => { 
+app.post('/person/', cors(corsOptions), async (req, res) => { 
     const person = req.body
     const addedPerson = await mySqlProxy.insertPerson(person)
-    console.log(addedPerson)
-    res.send(p)
+    res.send(addedPerson)
 })
 
 app.get('/persons/', cors(corsOptions), async (req, res) => { 
