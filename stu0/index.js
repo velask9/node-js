@@ -31,14 +31,22 @@ app.post('/person/', cors(corsOptions), async (req, res) => {
     res.send(addedPerson)
 })
 
+//
+
+app.get('/persons/', cors(corsOptions), async (req, res) => { 
+    const p = await mySqlProxy.selectPersons()
+    res.send(p)
+})
+
 app.put('/person/', cors(corsOptions), async (req, res) => { 
     const person = req.body
     const message = await mySqlProxy.updatePerson(person)
     res.send({ message })
 })
 
-app.get('/persons/', cors(corsOptions), async (req, res) => { 
-    const p = await mySqlProxy.selectPersons()
+app.delete('/person/:id', cors(corsOptions), async (req, res) => { 
+    const personId = req.params['id']
+    const p = await mySqlProxy.deletePerson(personId)
     res.send(p)
 })
 
@@ -46,6 +54,13 @@ app.get('/persons/', cors(corsOptions), async (req, res) => {
 //
 // Car
 //
+
+
+
+
+
+
+
 
 
 
