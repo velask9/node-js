@@ -27,6 +27,12 @@ app.post('/person/', cors(corsOptions), async (req, res) => {
     res.send(addedPerson)
 })
 
+app.put('/person/', cors(corsOptions), async (req, res) => { 
+    const person = req.body
+    const message = await mySqlProxy.updatePerson(person)
+    res.send({ message })
+})
+
 app.get('/persons/', cors(corsOptions), async (req, res) => { 
     const p = await mySqlProxy.selectPersons()
     res.send(p)

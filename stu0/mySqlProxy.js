@@ -10,7 +10,7 @@ const promisePool = require('./PromisePool.js').promisePool
 const SELECT_PERSONS = "select * from person"
 const SELECT_PERSON  = "select * from person where person_id = ?"
 const INSERT_PERSON  = "insert into person (first_name, last_name) values (?, ?)"
-const UPDATE_PERSON  = "update person set first_name = ? where first_name = ?"
+const UPDATE_PERSON  = "update person set first_name = ?, last_name = ? where person_id = ?"
 const DELETE_PERSON  = "delete from person where person_id = ?"
 
 //
@@ -47,10 +47,10 @@ exports.insertPerson = async (person) => {
     }
 }
 
-exports.updatePerson = async (oldName, newName) => {
+exports.updatePerson = async (person) => {
     try {
-        const [rows] = await promisePool.execute(UPDATE_PERSON, [newName, oldName])
-        return rows
+        const [rows] = await promisePool.execute(UPDATE_PERSON, [person.firstName, person.lastName, person.personId])
+        return rows.info
     }
     catch (e) {
         console.log(e)
