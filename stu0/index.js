@@ -21,8 +21,12 @@ app.get('/message', cors(corsOptions), async (req, res) => {
 
 app.get('/person/:id', cors(corsOptions), async (req, res) => { 
     const personId = req.params['id']
-    const p = await mySqlProxy.selectPersonById(personId)
-    res.send(p)
+    const person = await mySqlProxy.selectPersonById(personId)
+    if (person.length > 0) {
+        res.status(200).send(p)
+    } else {
+        res.status(404).send({message: 'Not found.'})
+    }
 })
 
 app.post('/person/', cors(corsOptions), async (req, res) => { 
@@ -46,10 +50,9 @@ app.put('/person/', cors(corsOptions), async (req, res) => {
 
 app.delete('/person/:id', cors(corsOptions), async (req, res) => { 
     const personId = req.params['id']
-    const p = await mySqlProxy.deletePerson(personId)
-    res.send(p)
+    const results = await mySqlProxy.deletePerson(personId)
+    res.send(results)
 })
-
 
 //
 // Car
