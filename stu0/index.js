@@ -16,7 +16,7 @@ app.get('/message', cors(corsOptions), async (req, res) => {
 })
 
 app.listen(PORT, () => {
-    console.log(`Express Web API running on port: ${PORT}`)
+    console.log(`Express web API running on port: ${PORT}`)
 })
 
 
