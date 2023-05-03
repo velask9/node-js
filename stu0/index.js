@@ -23,7 +23,7 @@ app.get('/person/:id', cors(corsOptions), async (req, res) => {
     const personId = req.params['id']
     const person = await mySqlProxy.selectPersonById(personId)
     if (person.length > 0) {
-        res.status(200).send(p)
+        res.send(person)
     } else {
         res.status(404).send({message: 'Not found.'})
     }
@@ -38,8 +38,8 @@ app.post('/person/', cors(corsOptions), async (req, res) => {
 //
 
 app.get('/persons/', cors(corsOptions), async (req, res) => { 
-    const p = await mySqlProxy.selectPersons()
-    res.send(p)
+    const persons = await mySqlProxy.selectPersons()
+    res.send(persons)
 })
 
 app.put('/person/', cors(corsOptions), async (req, res) => { 
