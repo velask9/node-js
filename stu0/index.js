@@ -1,6 +1,6 @@
 const cors = require('cors')
 const express = require('express')
-const mySqlProxy = require('./mySqlProxy')
+const mySqlProxy = require('./MySqlProxy')
 
 const PORT = 80
 const app = express()
@@ -15,17 +15,12 @@ app.get('/message', cors(corsOptions), async (req, res) => {
     res.send({message: 'Hello World!!!'})
 })
 
-app.listen(PORT, () => {
-    console.log(`Express web API running on port: ${PORT}.`)
-})
-
-
-//
-// GET /person
-//
-
 app.get('/person/:id', cors(corsOptions), async (req, res) => { 
     const personId = req.params['id']
     const p = await mySqlProxy.selectPersonById(personId)
     res.send(p)
+})
+
+app.listen(PORT, () => {
+    console.log(`Express web API running on port: ${PORT}.`)
 })
