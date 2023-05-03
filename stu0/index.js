@@ -55,14 +55,7 @@ app.delete('/person/:id', cors(corsOptions), async (req, res) => {
 // Car
 //
 
-
-
-
-
-
-
-
-
+// Todo...
 
 app.listen(PORT, () => {
     console.log(`Express web API running on port: ${PORT}.`)

@@ -1,0 +1,111 @@
+{
+	"info": {
+		"_postman_id": "2960aa0b-5418-4f97-a739-0c1a6b8a8d7b",
+		"name": "Express API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11955032"
+	},
+	"item": [
+		{
+			"name": "GET Message",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost/message",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"message"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Person By Id",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "POST Person",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Dave\",\r\n    \"lastName\" : \"Campbell\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://localhost/persons/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"persons",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Person",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Dave\",\r\n    \"lastName\" : \"Campbell\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://localhost/persons/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"persons",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE PERSON",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Dave\",\r\n    \"lastName\" : \"Campbell\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://localhost/person/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"person",
+						"4"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
