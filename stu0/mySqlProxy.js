@@ -1,5 +1,5 @@
 //
-// File: mySqlProxy.js
+// File: MySqlProxy.js
 // Auth: Martin Burolla
 // Date: 5/2/2023
 // Desc: Thin wrapper around the MySQL database.
