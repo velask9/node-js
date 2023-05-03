@@ -22,6 +22,6 @@ Submit a PR for each exercise.
 # Ex. 7 Delete Car
 
 
-# Ex. 8 Harden Car
+# Ex. 8 Harden Car Endpoints
 
 
