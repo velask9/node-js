@@ -1,5 +1,7 @@
 # JavaScript Node Express API
-Project used to illustrate Node Express and MySQL
+Project used to illustrate Node, Express and MySQL.
+
+Assignments are located [here](Assignments.md)
 
 # Getting Started
 - Clone this repo
