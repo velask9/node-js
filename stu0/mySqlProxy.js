@@ -20,7 +20,7 @@ const DELETE_PERSON  = "delete from person where person_id = ?"
 exports.selectPersonById = async (personId) => {
     try {
         const [rows] = await promisePool.query(SELECT_PERSON, [personId])
-        return rows
+        return rows[0]
     }
     catch (e) {
         console.log(e)
