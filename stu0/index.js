@@ -22,11 +22,7 @@ app.get('/message', cors(corsOptions), async (req, res) => {
 app.get('/person/:id', cors(corsOptions), async (req, res) => { 
     const personId = req.params['id']
     const person = await mySqlProxy.selectPersonById(personId)
-    if (person){
-        res.send(person)
-    } else {
-        res.status(404).send({message: 'Not found.'})
-    }
+    person ? res.send(person) : res.status(404).send({message: 'Not found.'})
 })
 
 app.post('/person/', cors(corsOptions), async (req, res) => { 
