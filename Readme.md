@@ -6,11 +6,9 @@ Assignments are located [here](Assignments.md)
 # Getting Started
 - Clone this repo
 - Install dependencies: `npm install`
-- Create `PromisePool.js` based from [PromisePool.js.template](PromisePool.js.template)
-- Start API: `npm start`
+- Create `PromisePool.js` in your student directory based from [PromisePool.js.template](PromisePool.js.template)
+- From your student directory, start the API: `npm start` or `nodemon index.js`
 
-# Notes
-- Built with VS Code 
 
 # Endpoint Reference
 ```
@@ -23,3 +21,6 @@ app.get('/message', cors(corsOptions), async (req, res) => {
     res.send({message: 'Hello World'})
 })
 ```
+
+# Notes
+- Built with VS Code 
