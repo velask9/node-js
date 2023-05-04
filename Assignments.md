@@ -56,6 +56,8 @@ Response:
 
 There's no need to harden this endpoint (validation, etc).  Focus on getting the basic functionality built first.  We will harden these endpoints at the end.
 
+Use the MySqlProxy approach for accessing data from the database.  Don't for get to create the `PromisePool.js` in your student directory.
+
 Create a new request in Postman for this endpoint and export the Postman collection to your student directory.
 
 Submit a PR when finished.
