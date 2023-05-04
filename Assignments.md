@@ -30,6 +30,8 @@ Create the following endpoint in your `index.js` file in your student directory:
 
 Create a new request in Postman for this endpoint and export the Postman collection to your student directory.
 
+Submit a PR when finished.
+
 # Ex. 2 Get Car
 
 Create the following endpoint in your `index.js` file in your student directory:
@@ -55,6 +57,8 @@ Response:
 There's no need to harden this endpoint (validation, etc).  Focus on getting the basic functionality built first.  We will harden these endpoints at the end.
 
 Create a new request in Postman for this endpoint and export the Postman collection to your student directory.
+
+Submit a PR when finished.
 
 # Ex. 3 Get Car for Make
 
@@ -90,6 +94,8 @@ Response:
 
 Create a new request in Postman for this endpoint and export the Postman collection and save it in your student directory.
 
+Submit a PR when finished.
+
 # Ex. 4 Post Car
 
 Create the following endpoint in your `index.js` file in your student directory:
@@ -121,6 +127,8 @@ Example Response:
 
 Create a new request in Postman for this endpoint and export the Postman collection and save it in your student directory.
 
+Submit a PR when finished.
+
 # Ex. 5 Put Car
 Create the following endpoint in your `index.js` file in your student directory:
 
@@ -150,6 +158,8 @@ Example Response:
 
 Create a new request in Postman for this endpoint and export the Postman collection and save it in your student directory.
 
+Submit a PR when finished.
+
 # Ex. 6 Delete Car
 
 Create the following endpoint in your `index.js` file in your student directory:
@@ -175,6 +185,9 @@ Example Response:
 
 Create a new request in Postman for this endpoint and export the Postman collection and save it in your student directory.
 
+Submit a PR when finished.
+
 # Ex. 7 Harden Car Endpoints
 Harden the car endpoint appropriately.  Add 404 response codes and validation logic where appropriate.
 
+Submit a PR when finished.
