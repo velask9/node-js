@@ -34,7 +34,18 @@
 			"name": "GET Person By Id",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "http://localhost/person/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"person",
+						"1"
+					]
+				}
 			},
 			"response": []
 		},
@@ -42,19 +53,30 @@
 			"name": "POST Person",
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"firstName\": \"Dave\",\r\n    \"lastName\" : \"Campbell\"\r\n}\r\n"
+					"raw": "{\r\n    \"firstName\": \"Eddie\",\r\n    \"lastName\" : \"Van Halen\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
 				},
 				"url": {
-					"raw": "http://localhost/persons/",
+					"raw": "http://localhost/person/",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"path": [
-						"persons",
+						"person",
 						""
 					]
 				}
@@ -64,20 +86,25 @@
 		{
 			"name": "PUT Person",
 			"request": {
-				"method": "POST",
+				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"firstName\": \"Dave\",\r\n    \"lastName\" : \"Campbell\"\r\n}\r\n"
+					"raw": "{\r\n    \"personId\" : 4,\r\n    \"firstName\": \"Dave\",\r\n    \"lastName\" : \"Campbell\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
 				},
 				"url": {
-					"raw": "http://localhost/persons/",
+					"raw": "http://localhost/person/",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"path": [
-						"persons",
+						"person",
 						""
 					]
 				}
@@ -102,6 +129,145 @@
 					"path": [
 						"person",
 						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Car By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/cars/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"cars",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Car By Make",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"personId\" : 4,\r\n    \"firstName\": \"Dave\",\r\n    \"lastName\" : \"Campbell\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/cars?make=Toyota",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"cars"
+					],
+					"query": [
+						{
+							"key": "make",
+							"value": "Toyota"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Car",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"carId\" : 1,\r\n    \"make\": \"Mazda\",\r\n    \"model\" : \"Mazda6\",\r\n    \"price\" : 30000,\r\n    \"color\" : \"silver\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/cars/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"cars",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Car",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"make\" : \"Toyota\",\r\n    \"model\": \"Corolla\",\r\n    \"color\" : \"Gray\",\r\n    \"price\" : 30000\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/cars/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"cars",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Car By Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"personId\" : 4,\r\n    \"firstName\": \"Dave\",\r\n    \"lastName\" : \"Campbell\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/cars/7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"cars",
+						"7"
 					]
 				}
 			},
