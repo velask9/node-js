@@ -72,7 +72,7 @@ app.get('/cars/:id', cors(corsOptions), async (req, res) => {
 })
 
 app.get('/cars', cors(corsOptions), async (req, res) => { 
-    const make = req.query['make']   // Read query parameters from URL.
+    const make = req.query['make']
     const car = await mySqlProxy.selectCarByMake(make)
     res.send(car)
 })
