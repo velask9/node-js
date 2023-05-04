@@ -65,7 +65,16 @@ app.delete('/person/:id', cors(corsOptions), async (req, res) => {
 // Car
 //
 
-// Todo...
+app.get('/cars/:id', cors(corsOptions), async (req, res) => { 
+    const carId = req.params['id']
+    const car = await mySqlProxy.selectCarById(carId)
+    res.send(car)
+})
+
+
+
+
+
 
 app.listen(PORT, () => {
     console.log(`Express web API running on port: ${PORT}.`)

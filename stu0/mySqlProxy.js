@@ -12,9 +12,12 @@ const SELECT_PERSON  = "select * from person where person_id = ?"
 const INSERT_PERSON  = "insert into person (first_name, last_name) values (?, ?)"
 const UPDATE_PERSON  = "update person set first_name = ?, last_name = ? where person_id = ?"
 const DELETE_PERSON  = "delete from person where person_id = ?"
+//
+const SELECT_CAR = "select * from car where car_id = ?"
+
 
 //
-// Public
+// Person
 //
 
 exports.selectPersonById = async (personId) => {
@@ -66,3 +69,20 @@ exports.deletePerson = async (personId) => {
         console.log(e)
     }
 }
+
+//
+// Cars
+//
+
+exports.selectCarById = async (carId) => {
+    try {
+        const [rows] = await promisePool.query(SELECT_CAR, [carId])
+        return rows[0]
+    }
+    catch (e) {
+        console.log(e)
+    }
+}
+
+
+
