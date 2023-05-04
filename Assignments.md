@@ -2,7 +2,7 @@
 Add your work in your student directory and submit a PR for each exercise.
 
 # Database
-Before you get started with the excerises, run the following script on your local database:
+Before you get started with the exercises, run the following script on your local database:
 
 ```
 CREATE TABLE `car` (
