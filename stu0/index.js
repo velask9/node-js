@@ -38,8 +38,8 @@ app.get('/person/:id',
 
 app.post('/person/', cors(corsOptions), async (req, res) => { 
     const person = req.body
-    const addedPerson = await mySqlProxy.insertPerson(person)
-    res.send(addedPerson)
+    const newPerson = await mySqlProxy.insertPerson(person)
+    res.send(newPerson)
 })
 
 //
@@ -71,10 +71,29 @@ app.get('/cars/:id', cors(corsOptions), async (req, res) => {
     res.send(car)
 })
 
+app.get('/cars', cors(corsOptions), async (req, res) => { 
+    const make = req.query['make']   // Read query parameters from URL.
+    const car = await mySqlProxy.selectCarByMake(make)
+    res.send(car)
+})
 
+app.put('/cars/', cors(corsOptions), async (req, res) => { 
+    const car = req.body
+    const message = await mySqlProxy.updateCar(car)
+    res.send({ message })
+})
 
+app.post('/cars/', cors(corsOptions), async (req, res) => { 
+    const car = req.body
+    const newCar = await mySqlProxy.insertCar(car)
+    res.send(newCar)
+})
 
-
+app.delete('/cars/:id', cors(corsOptions), async (req, res) => {
+    const carId = req.params['id']
+    const results = await mySqlProxy.deleteCar(carId)
+    res.send(results)
+})
 
 app.listen(PORT, () => {
     console.log(`Express web API running on port: ${PORT}.`)
