@@ -10,7 +10,7 @@ INSERT INTO person (`first_name`, `last_name`) VALUES ('Bob', 'Smith');
 INSERT INTO person (`first_name`, `last_name`) VALUES ('Charlie', 'Daniels');
 
 
-CREATE TABLE `express-api`.`car` (
+CREATE TABLE `car` (
   `car_id` INT NOT NULL AUTO_INCREMENT,
   `model` VARCHAR(45) NULL,
   `make` VARCHAR(45) NULL,
