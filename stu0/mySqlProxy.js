@@ -45,7 +45,8 @@ exports.selectPersons = async () => {
 
 exports.insertPerson = async (person) => {
     try {
-        const [rows] = await promisePool.execute(INSERT_PERSON, [person.firstName, person.lastName])
+        const [rows] = await promisePool.execute(INSERT_PERSON, 
+            [person.firstName, person.lastName])
         return { personId: rows.insertId, ...person } 
     }
     catch (e) {
@@ -55,7 +56,8 @@ exports.insertPerson = async (person) => {
 
 exports.updatePerson = async (person) => {
     try {
-        const [rows] = await promisePool.execute(UPDATE_PERSON, [person.firstName, person.lastName, person.personId])
+        const [rows] = await promisePool.execute(UPDATE_PERSON, 
+            [person.firstName, person.lastName, person.personId])
         return rows.info
     }
     catch (e) {
@@ -110,7 +112,8 @@ exports.updateCar = async (car) => {
 
 exports.insertCar = async (car) => {
     try {
-        const [rows] = await promisePool.execute(INSERT_CAR, [car.make, car.model, car.color, car.price])
+        const [rows] = await promisePool.execute(INSERT_CAR, 
+            [car.make, car.model, car.color, car.price])
         return { carId: rows.insertId, ...car } 
     }
     catch (e) {
