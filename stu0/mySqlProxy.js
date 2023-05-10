@@ -2,7 +2,7 @@
 // File: MySqlProxy.js
 // Auth: Martin Burolla
 // Date: 5/2/2023
-// Desc: Thin wrapper around the MySQL database.
+// Desc: Thin wrapper around the MySQL database and promise pool.
 //
 
 const promisePool = require('./PromisePool.js').promisePool
