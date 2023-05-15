@@ -7,7 +7,7 @@ Assignments are located [here](Assignments.md).
 - Clone this repo
 - Install dependencies: `npm install`
 - Create `PromisePool.js` in your student directory based from [PromisePool.js.template](PromisePool.js.template)
-- From your student directory, start the API: `npm start` or `nodemon index.js`
+- From your student directory, start the API: `node index.js` or `nodemon index.js`
 
 # Endpoint Parsing Reference
 ```
