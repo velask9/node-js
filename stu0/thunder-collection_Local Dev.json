@@ -1,0 +1,23 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Local Dev",
+    "dateExported": "2023-05-15T15:11:02.188Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "02cc2c74-3e90-4918-a1b0-8bea8e459ee7",
+            "colId": "06fd6f7c-8b6e-401a-afe1-5157a6d33fc8",
+            "containerId": "",
+            "name": "GET Message",
+            "url": "http://localhost/message",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-05-15T15:06:43.598Z",
+            "modified": "2023-05-15T15:06:51.883Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
