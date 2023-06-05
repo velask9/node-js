@@ -4,10 +4,10 @@ Project used to illustrate Node, Express and MySQL.
 Assignments are located [here](Assignments.md).
 
 # Getting Started
-- Clone this repo
+- Fork & Clone this repo
 - Install dependencies: `npm install`
-- Create `PromisePool.js` in your student directory based from [PromisePool.js.template](PromisePool.js.template)
-- From your student directory, start the API: `node index.js` or `nodemon index.js`
+- Create `PromisePool.js` in your server directory based from [PromisePool.js.template](PromisePool.js.template)
+- From your server directory, start the API: `node index.js` or `nodemon index.js`
 
 # Endpoint Parsing Reference
 ```

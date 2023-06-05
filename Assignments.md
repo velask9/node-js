@@ -1,5 +1,5 @@
 # JavaScript Node Express API Assignments
-Add your work in your student directory and submit a PR for each exercise.
+Add your work in your server directory and submit a PR for each exercise.
 
 # Database
 Before you get started with the exercises, run the following script on your local database:
@@ -22,19 +22,19 @@ insert into car (model, make, color, price) values ('458', 'Ferrari', 'red', 250
 ```
 
 # Ex. 1 Hello World
-Create the following endpoint in your `index.js` file in your student directory:
+Create the following endpoint in your `index.js` file in your server directory:
 
 |Verb|Path         |Body|Description                                  |
 |----|-------------|----|---------------------------------------------|
 |GET |/message     |NA  |Returns {"message": "Hello World}            |
 
-Create a new request in Postman for this endpoint and export the Postman collection to your student directory.
+Create a new request in Postman for this endpoint and export the Postman collection to your server directory.
 
 Submit a PR when finished.
 
 # Ex. 2 Get Car
 
-Create the following endpoint in your `index.js` file in your student directory:
+Create the following endpoint in your `index.js` file in your server directory:
 
 |Verb|Path         |Body|Description                                  |
 |----|-------------|----|---------------------------------------------|
@@ -56,15 +56,15 @@ Response:
 
 There's no need to harden this endpoint (validation, etc).  Focus on getting the basic functionality built first.  We will harden these endpoints at the end.
 
-Use the `MySqlProxy.js` approach for accessing data from the database.  Don't for get to create the `PromisePool.js` in your student directory.
+Use the `MySqlProxy.js` approach for accessing data from the database.  Don't for get to create the `PromisePool.js` in your server directory.
 
-Create a new request in Postman for this endpoint and export the Postman collection to your student directory.
+Create a new request in Postman for this endpoint and export the Postman collection to your server directory.
 
 Submit a PR when finished.
 
 # Ex. 3 Get Car for Make
 
-Create the following endpoint in your `index.js` file in your student directory:
+Create the following endpoint in your `index.js` file in your server directory:
 
 |Verb|Path         |Body|Description                                  |
 |----|-------------|----|---------------------------------------------|
@@ -94,13 +94,13 @@ Response:
 ]
 ```
 
-Create a new request in Postman for this endpoint and export the Postman collection and save it in your student directory.
+Create a new request in Postman for this endpoint and export the Postman collection and save it in your server directory.
 
 Submit a PR when finished.
 
 # Ex. 4 Post Car
 
-Create the following endpoint in your `index.js` file in your student directory:
+Create the following endpoint in your `index.js` file in your server directory:
 
 |Verb|Path         |Body|Description                                  |
 |----|-------------|----|---------------------------------------------|
@@ -127,12 +127,12 @@ Example Response:
     "price": 30000
 }
 
-Create a new request in Postman for this endpoint and export the Postman collection and save it in your student directory.
+Create a new request in Postman for this endpoint and export the Postman collection and save it in your server directory.
 
 Submit a PR when finished.
 
 # Ex. 5 Put Car
-Create the following endpoint in your `index.js` file in your student directory:
+Create the following endpoint in your `index.js` file in your server directory:
 
 |Verb|Path         |Body|Description                                  |
 |----|-------------|----|---------------------------------------------|
@@ -158,13 +158,13 @@ Example Response:
 }
 ```
 
-Create a new request in Postman for this endpoint and export the Postman collection and save it in your student directory.
+Create a new request in Postman for this endpoint and export the Postman collection and save it in your server directory.
 
 Submit a PR when finished.
 
 # Ex. 6 Delete Car
 
-Create the following endpoint in your `index.js` file in your student directory:
+Create the following endpoint in your `index.js` file in your server directory:
 
 |Verb|Path         |Body|Description                                  |
 |----|-------------|----|---------------------------------------------|
@@ -185,7 +185,7 @@ Example Response:
 }
 ````
 
-Create a new request in Postman for this endpoint and export the Postman collection and save it in your student directory.
+Create a new request in Postman for this endpoint and export the Postman collection and save it in your server directory.
 
 Submit a PR when finished.
 
