@@ -34,10 +34,18 @@ app.get('/cars', cors(corsOptions), async(req, res)=>{
     res.send(result)
     }) 
 
+//ex4 endpoint
+app.post('/cars', cors(corsOptions), async(req, res) =>{
+    const {model, make, color, price} = req.body;
+    const [result]= await pool.query('insert into car(model, make, color, price) values (?,?,?,?)',
+    [model, make, color, price])
+    
+    res.send(result)
+
+})
 
 app.listen(PORT, () => {
     console.log(`Express web API running on port: ${PORT}.`)
 })
-
 
 
