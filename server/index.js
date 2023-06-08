@@ -7,7 +7,7 @@ const PORT = 80
 const app = express()
 const corsOptions = { origin: ['http://localhost:3000'], optionsSuccessStatus: 200 }
 
-// Middleware...
+// Middleware... MIDDLE OF THE DATABASE OR FRONTEND AND BACKEND
 app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
@@ -43,6 +43,17 @@ app.post('/cars', cors(corsOptions), async(req, res) =>{
     res.send(result)
 
 })
+
+//ex5 endpoint
+app.put('/cars', cors(corsOptions), async (req, res) =>{
+    const{ car_id, make, model, color, price} = req.body;
+    const {result}= await pool.query("update car set make = ?, model = ?, color = ?, price = ? where car_id = ?",
+    [make, model, color, price, car_id])
+
+    res.send(result) 
+    
+})
+
 
 app.listen(PORT, () => {
     console.log(`Express web API running on port: ${PORT}.`)
